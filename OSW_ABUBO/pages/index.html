@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OSW_ABUBO</title>
+    <meta name="UTF-8">
+    <meta name="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta name="author" content="Adrian Czegie Abubo">
+    <meta name="keywords" content="Car repair, Motorcycle Repair, Computer and laptop repair, Keybaord modding, Finals, Final project">
+    <meta name="school" content="University of Baguio">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="bg"><img src="/src/logo.png"></div>
+            <div class="logo"><a>A.C. Repair Service</a></div>
+            <nav>
+                <ul class="links">
+                    <li><a href="about">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reference.html">Testimonials & References</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="action_btn">Get Started</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    
+        <div class="dropdown_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reference.html">Testimonials & References</a></li>
+            <li><a href="#" class="action_btn">Get Started</a></li>
+        </div>
+    </header>
+        
+    <main>
+        <section id="aboutMe">
+                <div class="text-box">
+                    <h1>Welcome to A.C. Repair Service!</h1>
+                    <p>Hello, I am Adrian Czegie! Welcome to A.C. Repair Service, which specializes in restoring your devices back to life. With my impressive background and knowledge in this field, I ensure you that your gadgets are in good hands. For keyboard enthusiast, I also modify keyboards to get the sound, feel, and looks that you desire. Other than technology hardware repairs and keyboard modifications, I also offer a service of vehicle and motorcycle repair. With my knowledge, I'll make sure your ride is in good shape and safe to drive. I cater a variety of services including car, motorcycle, keyboard modification, device repairs.</p>
+                </div>
+                <div class="aboutMeIMG">
+                    <img src="/src/logo.png">
+                </div>
+        </section>
+    </main>
+
+    <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function (){
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+            }
+    </script>
+
+    <footer>
+        <p>&copy; 2023. Adrian Czegie Abubo.</p>
+    </footer>
+
+</body>
+</html>

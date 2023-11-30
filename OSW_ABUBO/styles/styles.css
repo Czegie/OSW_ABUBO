@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('/src/pageBG.jpg');
+    background-size: cover;
+    background-position: center;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+a:hover {
+    color: lightblue;
+}
+
+/* HEADER PART */
+header {
+    position: relative;
+    padding: 0 2rem;
+    background-color: #000;
+}
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar img {
+    width: 50px;
+    border-radius: 50%;
+}
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: srcFont;
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .toggle_btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn {
+    background-color: darkblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.action_btn:hover {
+    scale: 1.05;
+    color: white;
+}
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU PART */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open {
+    height: 240px;
+}
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ABOUTME */
+section#aboutMe {
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-box h1{
+    font-size: 35px;
+    margin-bottom: 1rem;
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    font-family: 'poppins', sans-serif;
+    background: url(/src/stripe.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+} 
+.text-box p {
+    font-size: 20px;
+    display: block;
+}
+.aboutMeIMG img {
+    max-width: 150%;
+    border-radius: 50%;
+    float: right;
+    margin-left: 15px;
+    display: block;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+    .dropdown_menu {
+        display: block;
+    }
+}
+@media (max-width: 576px) {
+    .dropdown_menu{
+        left: 3rem;
+        width: unset;
+    }
+}
+
+/* CSS MEDIA FOR SMALL DEVICES */
+@media screen and (max-width: 600px) {
+    section#aboutMe {
+        height: calc(100vh - 60px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .text-box h1{
+        font-size: 25px;
+        margin-bottom: 1rem;
+        display: block;
+    }
+    .text-box p {
+        font-size: 15px;
+        display: block;
+    }
+    .aboutMeIMG img {
+        max-width: 130px;
+        border-radius: 50%;
+        float: right;
+        margin-left: 15px;
+        display: block;
+    }
+}
+
+/* CSS MEDIA FOR MEDIUM DEVICES */
+@media screen and (min-width: 600px) {
+    section#aboutMe {
+        padding: 40px;
+    }
+    .aboutMe img {
+        width: 800px;
+    }
+    .text-box p {
+        margin-right: 90px;
+    }
+}
+
+/* CSS MEDIA FOR LARGE DEVICES */
+@media screen and (min-width: 1200px) {
+    section#aboutMe {
+        padding: 140px;
+    }
+    .text-box h1{
+        font-size: 50px;
+        margin-bottom: 1rem;
+        display: block;
+    }
+    .text-box p {
+        font-size: 25px;
+        display: block;
+        margin-right: 200px;
+    }
+    .aboutMeIMG img {
+        width: 1200px;
+        border-radius: 50%;
+        float: right;
+        margin-left: 15px;
+        display: block;
+    }
+}
+
+/* FOOTER PART */
+footer {
+    text-align: center;
+    background-color: black;
+}
+
+
+
+
+
+
+/* CSS FOR GALLERY HTML */
+#galleryWebsiteName {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -30px;
+    display: block;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 160px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    font-family: srcFont;
+    background: url(/src/stripe.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+@font-face {
+    font-family: srcFont;
+    src: url(/src/ea.ttf);
+}
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+#galleryTagline {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 60px;
+}
+
+/* MY SERVICES LIST */
+galleryList {
+    padding: 10px 5%;
+}
+.galleryServiceList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px;
+    height: 100%;
+    align-items: center;
+    margin: center;
+}
+.galleryServiceList .card {
+    width: 400px;
+    background: #000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 75px;
+    margin-left: 67px;
+}
+.galleryServiceList .card img {
+    height: 500px;
+    width: 100%;
+}
+.galleryServiceList .card .title {
+    font-weight: 900;
+    font-size: 20px;
+    color: #fcfcfc;
+    padding: 0 20px;
+}
+.galleryServiceList .card .category {
+    padding: 5px 20px;
+    opacity: 0.8;
+}
+.galleryServiceList .card .gallerybox .price {
+   color: #fcfcfc;
+   font-size: 20px;
+   font-weight: bold;
+   margin-left: 20px;
+}
+.galleryServiceList .card .gallerybox .galleryBtn{
+    background-color: darkblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+
+}
+
+
+
+
+
+
+/* CSS FOR REFERENCES HTML */
+.t_r {
+    text-align: center;
+    display: relative;
+}
+.t_r h1{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: srcFont;
+    font-weight: 10;
+}
+.t_r h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 200;
+    font-family: srcFont;
+}
+.t_r p {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+/* CSS FOR USERACCOUNT HTML */
+#useraccountPage {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.checkout {
+    background-color: white;
+    width: 900px;
+    padding: 60px;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.checkout h2 {
+    color: #000;
+    font-size: 40px;
+    padding: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    border: 1px dashed #000;
+}
+.checkout h4 {
+    font-size: 35px;
+    padding-bottom: 5px;
+    color: #000;
+}
+.input_group {
+    margin-bottom: 8px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+}
+.input_box {
+    width: 100%;
+    margin-right: 12px;
+}
+.input_box .name {
+    padding: 14px 10px 14px 50px;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #000;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.checkout-index button {
+    background-color: #000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
